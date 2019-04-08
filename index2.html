@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<!-- Configs -->
+	<head>
+		<!-- Metas -->
+		<meta charset="utf-8" />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+		
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+		
+		<!-- Stylesheet -->
+		<link href="css/index2.css" rel="stylesheet"></link>
+		
+		<!-- Site -->
+		<title>WebTris</title>
+		<link rel="icon" type="../png/favicon.png" href="/favicon.png" sizes="96x96" />
+	</head>
+	
+	<!-- Objects -->
+	<body onload="GameMode_Vanilla()">
+		<div id="container_mainframe">
+			<div id="beside_left" class="beside"></div>
+			
+			<div id="beside_center">
+				<!-- background -->
+				<canvas id="game_board" class="background"></canvas>
+				
+				<!-- static -->
+				<p id="impressum">
+					<a id="about" onclick="LinkTo('about')">About</a>
+					| 
+					<a id="terms" onclick="LinkTo('terms')">Terms</a>
+				</p>
+			
+				<!-- join -->
+				<div id="container_index" class="container_content">
+					<!-- content -->
+					<label id="header_index" class="header">WebTris</label>
+					<div id="center_index" class="container_center">
+						<input id="gamepin" type="text" maxlength="3" onkeyup="InputDefaultText(event)"></input>
+						<label id="gamepin_text" class="default_text">Game PIN</label>
+						<div id="gamepin_background"class="default_background"></div>
+						<button id="enter" onclick="">Enter</button>
+						<a id="link_create" class="link_" onclick="LinkTo('create')">Create</a>
+					</div>
+				</div>
+				
+				<!-- gamemode -->
+				<div id="container_gamemode" class="container_content">
+					
+					<label id="header_gamemode" class="header">Modes</label>
+					<div id="center_gamemode" class="container_center">
+						<button id="original" onclick="Selected(event)">Original</button>
+						<button id="survival" onclick="Selected(event)">Survival</button>
+						<button id="countdown" onclick="Selected(event)">Countdown</button>
+						<a id="link_back" class="link_" onclick="LinkTo('back')">Back</a>
+					</div>
+				</div>
+				
+				<!-- selected -->
+				<div id="container_selected" class="container_content">
+					
+						<div id="center_selected" class="container_center">
+							<button id="selected" onclick=""></button>
+							<label id="description" class="text">In Survival you play until the blocks reach the top of the game board. But the fall speed does not increase with your level.</label>
+							
+							<button id="multiplayer" class="checkbox" onclick="ToggleCheckbox()"></button>
+							<label id="multiplayer_text" class="text">Multiplayer</label>
+							<label id="gamepin1_text" class="header"></label>
+							<input id="nickname" type="text" maxlength="10" onkeyup="InputDefaultText(event)"></input>
+							<label id="nickname_text" class="default_text">Nickname</label>
+							<div id="nickname_backround" class="default_background"></div>
+							<button id="play_spectate" onclick="">Play</button>
+						</div>
+				</div>
+				
+				
+				
+			</div>
+			<div id="beside_right" class="beside"></div>
+		</div>
+	</body>
+	
+	<!-- Scripts -->
+	<script src="js/index2.js"></script>
+	<script src="../js/GameSystem.js"></script>
+	<script src="../js/GameMode_Vanilla.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.1/socket.io.js"></script>
+</html>
